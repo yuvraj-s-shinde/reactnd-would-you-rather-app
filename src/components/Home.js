@@ -4,8 +4,9 @@ import Question from './Question'
 import { Redirect } from 'react-router-dom'
 
 class Home extends Component {
+    // state variable to display unanswered/answered questions
     state = {
-        unanswered: true 
+        unanswered: true
     }
 
     handleQuestionType = e => {

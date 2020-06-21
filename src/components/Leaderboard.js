@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import handleInitialData from '../actions/shared'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
@@ -55,6 +54,7 @@ function mapStateToProps({ users, authedUser }) {
          authedUser,
          userIds: Object.keys(users)
          .sort((a,b) => (Object.keys(users[b].answers).length + users[b].questions.length) - (Object.keys(users[a].answers).length + users[a].questions.length)),
+        // user ids sorted by user score = no of questions asked + number of polls answered
     })
 }
 

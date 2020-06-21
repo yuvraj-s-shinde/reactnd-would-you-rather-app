@@ -3,6 +3,24 @@ import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 import { handleAddQuestion } from '../actions/questions'
 
+// Component to display input text item for poll options
+const PollOptionTextInputItem = props => {
+    const { value, onChange } = props
+
+    return (
+        <div className="form-check">
+            <input
+            type="text"
+            name="poll-options"
+            value={value}
+            onChange={onChange}
+            className="form-check-input"
+            size="100"
+            />                        
+        </div>
+    )
+}
+
 class NewQuestion extends Component {
     state = {
         optionOneText: '',
@@ -53,29 +71,11 @@ class NewQuestion extends Component {
                     <div>
                         Would you rather ...
                     </div>
-                    <div className="form-check">
-                        <input
-                        type="text"
-                        name="poll-options"
-                        value={optionOneText}
-                        onChange={this.onChangeOptionOne}
-                        className="form-check-input"
-                        size="100"
-                        />                        
-                    </div>
+                    <PollOptionTextInputItem value={optionOneText} onChange={this.onChangeOptionOne} />
                     <div className="center">
                         OR
                     </div>
-                    <div className="form-check">
-                        <input
-                        type="text"
-                        name="poll-options"
-                        value={optionTwoText}
-                        onChange={this.onChangeOptionTwo}
-                        className="form-check-input"
-                        size="100"
-                        />                        
-                    </div>
+                    <PollOptionTextInputItem value={optionTwoText} onChange={this.onChangeOptionTwo} />
                     <div className="center">
                         <button className="btn btn-primary" type="submit" disabled={optionOneText === '' && optionTwoText === ''}>
                             Submit

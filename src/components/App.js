@@ -30,12 +30,14 @@ class App extends Component {
           <LoadingBar />
           <div className='container'>
             <Nav/>
-            {authedUser !== null && <div>
+            {/* logged in user info */}
+            {authedUser !== null && (
+            <div>
                 {users[authedUser].name} logged in.
                 <button onClick={this.onLogout}>
                     LOGOUT
                 </button>
-            </div>}
+            </div>)}
             {this.props.loading === true
             ? null
             : <div>

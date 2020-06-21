@@ -7,6 +7,7 @@ import { Redirect } from 'react-router-dom'
 
 class Login extends Component {
 
+    // state variable to store selected user for login
     state = {
         selectedUser: ''
     }
