@@ -1,22 +1,9 @@
 import React, { Component } from 'react'
-import Dropdown from 'react-dropdown'
-import 'react-dropdown/style.css'
 import handleInitialData from '../actions/shared'
 import { connect } from 'react-redux'
 import { Redirect } from 'react-router-dom'
 
 class Leaderboard extends Component {
-
-    state = {
-        selectedUser: ''
-    }
-
-    handleSubmit = e => {
-        e.preventDefault();
-        const { dispatch } = this.props
-        dispatch(handleInitialData(this.state.selectedUser))
-    }
-
     onChange = e => {
         this.setState({
             selectedUser: e.label
@@ -31,16 +18,28 @@ class Leaderboard extends Component {
 
         return (
             <div>                
-                <ul className='leaderboard'>
+                <ul>
                     {userIds.map(id => (
-                        <li key={id}>
+                        <li key={id} className="list-item">
                             <div className='user-info'>
                                 <img
                                     src={users[id].avatarURL}
                                     alt={`avatar of ${users[id].name}`}
                                     className='avatar'
                                 />
-                                <span>{users[id].name}</span>
+                                
+                                <div className="user-score">
+                                    <span>{users[id].name}</span>
+                                    <div>
+                                        {`Answered questions: ${Object.keys(users[id].answers).length}`}
+                                    </div>
+                                    <div>
+                                        {`Unanswered questions: ${users[id].questions.length}`}
+                                    </div>
+                                    <div>
+                                        {`Score: ${Object.keys(users[id].answers).length + users[id].questions.length}`}
+                                    </div>
+                                </div>
                             </div>
                         </li>
                     ))}

@@ -116,7 +116,7 @@ class Question extends Component {
                             <div>
                                 {`Would you rather ${optionOne.text}?`}
                                 { selectedAnswer === "optionOne" && (
-                                <b> YOUR ANSWER</b>
+                                <b>{`   <-- YOUR VOTE`}</b>
                                 )}
                             </div>
                             <ProgressBar optionOneVotes={optionOne.votes} optionTwoVotes={optionOne.votes}/>
@@ -125,7 +125,7 @@ class Question extends Component {
                             <div>
                                 {`Would you rather ${optionTwo.text}?`}
                                 { selectedAnswer === "optionTwo" && (
-                                <b> YOUR ANSWER</b>
+                                <b>{`   <-- YOUR VOTE`}</b>
                                 )}
                             </div>
                             

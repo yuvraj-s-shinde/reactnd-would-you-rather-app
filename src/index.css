@@ -70,6 +70,10 @@ code {
   border-width: 2px;
 }
 
+.list-item {
+  list-style-type: none;
+}
+
 .avatar {
   height: 50px;
   border-radius: 25px;
@@ -92,6 +96,22 @@ code {
   margin-right: 5px;
 }
 
+.user-score {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-score > span:first-child {
+  font-weight: bold;
+  margin-right: 5px 50px;
+}
+
+.user-score > div:nth-child(4) {
+  font-weight: bold;
+  margin: 10px 200px;
+}
+
 .question-info {
   margin: 10px;
   display: flex;
@@ -103,12 +123,6 @@ code {
   font-weight: bold;
   margin-right: 5px 50px;
 }
-
-/* div {
-  border: 1px solid #dad7d7;
-  align-content: center;
-  margin: auto;
-} */
 
 .question-info > div > div > span:first-child {
   font-weight: bold;

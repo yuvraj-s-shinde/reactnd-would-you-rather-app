@@ -28,12 +28,12 @@ class Home extends Component {
                 </div>
                 <ul className='question-list'>
                     {this.state.unanswered && unansweredQuestionIds.map(id => (
-                        <li key={id}>
+                        <li key={id} className="list-item">
                             <Question id={id} />
                         </li>
                     ))}
                     {!this.state.unanswered && answeredQuestionIds.map(id => (
-                        <li key={id}>
+                        <li key={id} className="list-item">
                             <Question id={id} />
                         </li>
                     ))}
