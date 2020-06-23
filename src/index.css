@@ -118,7 +118,6 @@ code {
   flex-direction: column;
 }
 
-/* Hacky but less typing in the video */
 .question-info > div > span:first-child {
   font-weight: bold;
   margin-right: 5px 50px;
@@ -160,7 +159,6 @@ code {
   flex-direction: column;
 }
 
-/* Hacky but less typing in the video */
 .question-answered > div > span:first-child {
   font-weight: bold;
   margin: 10px 200px;
@@ -170,10 +168,6 @@ code {
   font-weight: bold;
   margin: 10px 200px;
 }
-/* 
-.question-answered > div > div {
-  margin-left: inherit;
-} */
 
 .question-answered > div > div > span {
   display:inline-block;
@@ -200,13 +194,6 @@ code {
   font-weight: bold;
   margin: 10px 300px;
 }
-
-/* .progress-bar {
-  outline: 0;
-  font-weight: 700;
-  border-width: 2px;
-  background-color: #4CAF50;
-} */
 
 .ui.progress .bar{
   background: #4CAF50;
